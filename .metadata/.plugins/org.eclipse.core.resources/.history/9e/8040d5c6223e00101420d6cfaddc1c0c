@@ -1,0 +1,19 @@
+package random_Questions;
+
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+public class Assertion_question {
+	
+	@Test 
+	public void tc1() {
+		Assert.fail();
+		System.out.println("this is tc1");
+		
+	}
+	@Test
+	public void tc2() {
+		System.out.println("this is tc2");
+	}
+
+}

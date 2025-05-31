@@ -1,0 +1,29 @@
+package random_Questions;
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class Alert_popup {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		WebDriver dr = new ChromeDriver();
+		dr.manage().window().maximize();
+		dr.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		dr.get("https://demoqa.com/alerts");
+		
+WebElement click = dr.findElement(By.xpath("//button[.='Click me' and @id='alertButton']"));
+	
+	WebDriverWait wait = new WebDriverWait(dr, Duration.ofSeconds(10));
+	wait.until(ExpectedConditions.elementToBeClickable(click));
+
+	}
+
+}

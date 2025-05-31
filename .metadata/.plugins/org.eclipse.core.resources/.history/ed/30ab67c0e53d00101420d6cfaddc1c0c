@@ -1,0 +1,17 @@
+package interface_topic;
+
+public class Loosecoupling_Bike implements LooseCoupling {
+	
+	public void trip() {
+		
+		System.out.println("we can go with Bike");
+	}
+	
+	public static void main(String[] args) {
+		
+		LooseCoupling lc;
+		lc = new LooseCoupling_Car();
+		lc.trip();
+		
+	}
+}

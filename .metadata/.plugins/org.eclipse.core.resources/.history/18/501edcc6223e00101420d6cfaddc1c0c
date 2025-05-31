@@ -1,0 +1,30 @@
+package testNG;
+
+import org.testng.annotations.Test;
+
+public class Groups_Data {
+	@Test (groups = {"US"})
+	void accenture() {
+		System.out.println("accenture is a American Company");
+	}
+	@Test (groups = {"Ind"})
+	void tcs() {
+		System.out.println("TCS is a indian Company");
+	}
+	@Test (groups ={"Ind","Korea"})
+	void samsung() {
+		System.out.println("Samsung is South Korean & Ind Company");
+	}
+	@Test (groups = {"US"})
+	void apple() {
+		System.out.println("Apple is US Company");
+	}
+	@Test (groups = {"US"})
+	void cognizant() {
+		System.out.println("Cogniznant is a US Company");
+	}
+	@Test (groups = {"Ind","US"})
+	void infosys() {
+		System.out.println("Infosys is a indian Company");
+	}
+}

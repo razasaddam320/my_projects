@@ -1,0 +1,54 @@
+package testNG;
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+
+public class DataProvider3 {
+	
+	WebDriver driver;
+	@BeforeTest
+	void setup() {
+		
+		driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get("https://www.saucedemo.com/");
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		
+	}
+	@Test (dataProvider ="UserData")
+	void login( String username) throws InterruptedException {
+		//un and pw login attribute
+		WebElement usernamefield = driver.findElement(By.cssSelector("#user-name"));
+		WebElement password = driver.findElement(By.cssSelector("#password"));
+		
+		usernamefield.sendKeys(username);
+		password.sendKeys("secret_sauce");
+		//click on loginbutton
+		WebElement login = driver.findElement(By.cssSelector("#password"));
+		login.click();
+		Thread.sleep(3000);
+		
+	}
+	
+	@DataProvider (name = "UserData")
+	public Object[][] dataProviderMethod() {
+		
+		return new Object[][]
+				{{"standard_user"} ,{"problem_user"}};
+	}
+	
+	@AfterTest
+	void tearDown() {
+		driver.quit();
+	}
+
+
+}

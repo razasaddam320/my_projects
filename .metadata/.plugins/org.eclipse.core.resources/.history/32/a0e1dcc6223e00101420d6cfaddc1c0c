@@ -1,0 +1,41 @@
+package testNG;
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+import org.testng.SkipException;
+import org.testng.annotations.Test;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class ListenersDemo {
+	
+	@Test
+	public void loginOrangHRM() {
+		
+		WebDriverManager.chromedriver().setup();
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		driver.findElement(By.name("username")).sendKeys("Admin",Keys.TAB,"admin123",Keys.ENTER);
+		Assert.assertEquals(driver.getTitle(), "OrangeHRM");
+		
+	}
+	@Test
+	public void failTestcase() {
+		 System.out.println(" fail the TC");
+		 Assert.assertTrue(false);
+	}
+	@Test
+	public void testSkipped() {
+		System.out.println(" TC Skipped");
+		throw new SkipException("skip exception thrown..");
+	}
+	
+	
+
+}

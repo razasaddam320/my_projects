@@ -1,0 +1,26 @@
+package testNG;
+
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+public class IRetryAnalyzer_1 {
+	
+	// (retryAnalyzer = IRetry_Analyser_2.class) // how many times re-run the failed testScript
+	
+	@Test
+	public void tc1() {
+		System.out.println(" 1st tc");
+		Assert.assertTrue(false);
+	} 
+	@Test 
+	public void tc2() {
+		System.out.println(" 2nd tc");
+		Assert.assertTrue(false);
+	} 
+	@Test
+	public void tc3() {
+		System.out.println(" 3rd tc");
+		
+	} 
+
+}

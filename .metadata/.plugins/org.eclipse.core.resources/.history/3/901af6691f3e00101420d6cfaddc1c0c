@@ -1,0 +1,17 @@
+package tng;
+
+import org.openqa.selenium.WebDriver;
+
+public class Cross_Browser {
+
+	WebDriver driver;
+	
+	public void launch_Browser(String browser) {
+		
+		switch(browser.toLowerCase() {
+			
+			
+		}
+		
+	}
+}

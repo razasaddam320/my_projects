@@ -1,0 +1,67 @@
+package explicitlywait;
+
+import java.time.Duration;
+import java.util.Set;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
+public class Explicit {
+	WebDriver driver;
+	@BeforeTest
+	public void launch_google() {
+		driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		
+		driver.get("https://www.irctc.co.in/nget/train-search");
+		driver.manage().deleteAllCookies();
+	}	
+
+	@Test
+	public void dropdown_list() throws InterruptedException {
+		
+		Thread.sleep(2000);
+		
+		WebElement meals = driver.findElement(By.xpath("//a[text()=' MEALS ']"));
+		WebElement ecatering = driver.findElement(By.xpath("//a[@aria-label=\"E-catering opens a new window\"]//span[.='Order Food - E-Catering']"));
+		
+		Actions act = new Actions(driver);
+		act.moveToElement(meals).perform();
+		act.click(ecatering).perform();
+		
+		Thread.sleep(2000);
+		
+		String mainid = driver.getWindowHandle();
+		Set<String> allid = driver.getWindowHandles();
+		JavascriptExecutor jse = (JavascriptExecutor)driver;
+	
+		for (String id : allid) {
+			if(!mainid.equals(id))
+			{
+				driver.switchTo().window(id);
+			}
+		}
+		
+		
+		
+		WebElement ele = driver.findElement(By.xpath("//a[.='Salem jn']"));
+		jse.executeScript("arguments[0].click();", ele);
+		//explicit wait
+		WebElement explicit = driver.findElement(By.xpath("//span[.='Restaurants at']"));
+		
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	String status =	wait.until(ExpectedConditions.elementToBeClickable(explicit)).getText();
+	System.out.println(status);	
+		
+	}
+
+}

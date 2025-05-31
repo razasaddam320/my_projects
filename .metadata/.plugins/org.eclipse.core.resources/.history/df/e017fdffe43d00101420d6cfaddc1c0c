@@ -1,0 +1,40 @@
+package interface_topic;
+
+public interface LooseCoupling {
+	
+	void trip();
+  
+}
+
+class Bike implements LooseCoupling {
+
+	@Override
+	public void trip() {
+		
+		System.out.println("we can go with bike");		
+	}	
+}
+
+class Car implements LooseCoupling {
+
+	@Override
+	public void trip() {
+		
+		System.out.println("we can go with Car");
+	}
+}
+
+
+class Main {
+	public static void main(String[] args) {
+		
+		LooseCoupling lc ;
+		
+		lc = new Bike();
+		lc.trip();
+		lc= new Car();
+		lc.trip();
+		
+		
+	}
+}

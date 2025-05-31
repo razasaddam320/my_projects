@@ -1,0 +1,53 @@
+package random_Questions;
+
+import java.time.Duration;
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
+public class Waits_Practice {
+	
+	WebDriver dr;
+	@BeforeTest
+	public void launch_Browser() {
+		
+		dr = new ChromeDriver();
+		dr.manage().window().maximize();
+		dr.get("https://www.cricbuzz.com/");
+		dr.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		
+	}
+	@Test
+	public void tc() {
+		
+		WebElement ele = dr.findElement(By.xpath("//a[text()='Rankings']"));
+		
+		Actions act = new Actions(dr);
+		act.moveToElement(ele).perform();
+		WebElement women = dr.findElement(By.linkText("ICC Rankings - Women"));
+		act.click(women).perform();
+		
+		WebElement text = dr.findElement(By.xpath("//h1[text()=\"ICC Cricket Rankings - Women's Batting\"]"));
+		WebDriverWait wait = new WebDriverWait(dr, Duration.ofSeconds(10));
+	String print =	wait.until(ExpectedConditions.visibilityOf(text)).getText();
+	System.out.println(print);
+	
+		List<WebElement> playername = dr.findElements(By.xpath("//a[@class='text-hvr-underline text-bold cb-font-16']"));
+		
+		for (WebElement i : playername) {
+			
+			System.out.println(i.getText());
+		}
+		
+		
+	}
+
+}

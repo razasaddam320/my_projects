@@ -1,0 +1,19 @@
+package testNG;
+
+import org.testng.annotations.Test;
+
+public class Depends_Data {
+	@Test 
+	void login() {
+		System.out.println("Exicute login page");
+	}
+	@Test (dependsOnMethods = "login")
+	void register() {
+		System.out.println("exicute register page");
+	}
+	@Test (dependsOnMethods = {"login","register"})
+	void logout() {
+		System.out.println("exicute logout");
+	}
+
+}

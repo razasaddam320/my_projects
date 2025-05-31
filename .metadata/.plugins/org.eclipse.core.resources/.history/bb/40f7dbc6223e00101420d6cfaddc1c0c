@@ -1,0 +1,24 @@
+package testNG;
+
+import org.testng.annotations.Test;
+
+
+public class Enabled_disabled_TC {
+	
+	@Test  (enabled = false)
+	public void prosanal_Loan_Mobile() {
+		System.out.println("prosanal open using mobile");
+	}
+	@Test  (enabled = true) // by difault enabled = true no need to write
+	public void prosanal_Loan_Web() {
+		System.out.println("prosanal open using Web");
+	}
+	@Test
+	public void home_Loan_Mobile() {
+		System.out.println("Home_loan open using mobile");
+	}
+	@Test  (enabled = false)
+	public void home_Loan_Web() {
+		System.out.println("Home_loan open using mobile");
+	}
+}

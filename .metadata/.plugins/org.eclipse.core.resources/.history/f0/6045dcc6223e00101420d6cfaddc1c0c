@@ -1,0 +1,23 @@
+package testNG;
+
+import org.testng.annotations.Test;
+
+public class Gruops_Atrributes {
+	@Test (groups ="MNC Company")
+	public void tcs() {
+		System.out.println("TCS is a company");
+	}
+	@Test (groups ="MNC Company")
+	public void wipro() {
+		System.out.println("wipro is a company");
+	}
+	@Test (groups =" Automobile Company")
+	public void tata() {
+		System.out.println("Tata Motors");
+	}
+	@Test (groups =" Automobile Company")
+	public void maruti() {
+		System.out.println("Maruti Suzuki");
+	}
+
+}

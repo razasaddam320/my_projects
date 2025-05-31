@@ -1,0 +1,21 @@
+package tng;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+
+import com.beust.jcommander.Parameter;
+
+public class TestNg_Parameter {
+	
+	@Test
+	@Parameters({"Username" , "Password"})
+	public void login_app(String username , String pwd) {
+		
+		
+	}
+		
+
+}

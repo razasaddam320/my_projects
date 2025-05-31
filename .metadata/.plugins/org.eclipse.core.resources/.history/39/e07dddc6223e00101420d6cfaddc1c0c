@@ -1,0 +1,14 @@
+package testNG;
+
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+
+public class Parameters_2nd_SpecificValue {
+	
+	@Test
+	@Parameters({"softwareCompanyName"})
+	public void softwareCompany(String name) {
+		System.out.println(name);
+	}
+
+}

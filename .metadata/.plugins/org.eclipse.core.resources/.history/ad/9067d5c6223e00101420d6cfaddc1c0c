@@ -1,0 +1,48 @@
+package random_Questions;
+
+import java.time.Duration;
+import java.util.List;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
+/**
+ * go to ebay, click on electronics,choose smartphone and smartwatches,select samsung phones,
+ *  print all the phone and prices
+ * @author Saddam Hussain
+ *
+ */
+public class Ebay_practice {
+	WebDriver driver;
+	
+	@BeforeTest
+	public void launch_bowser() {
+		driver = new EdgeDriver();
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		driver.get("https://www.ebay.com/");
+		
+	}
+	@Test
+	public void tc1() {
+		driver.findElement(By.linkText("Electronics")).click();
+		driver.findElement(By.xpath("//section[@class=\"brw-region brw-region--right\"]/descendant::a[contains(@href,\"Cell-Phones-Smart-Watches-Accessories\")]")).click();
+		driver.findElement(By.xpath("//span[.='Samsung Cell Phones and Smartphones']")).click();
+		
+		List<WebElement> phonename =	driver.findElements(By.xpath("//ul[@class='brwrvr__item-results brwrvr__item-results--list']/descendant::h3[@class=\"textual-display bsig__title__text\"]"));
+		List<WebElement> price = driver.findElements(By.xpath("//ul[@class=\"brwrvr__item-results brwrvr__item-results--list\"]/descendant::div[@class=\"brwrvr__item-card__signals__body\"]/descendant::span[@class=\"textual-display bsig__price bsig__price--displayprice\"]"));
+
+	int count =0;
+	for(int i=0; i<phonename.size(); i++)
+	{
+		count++;
+		System.out.println(" phone name: -- "+phonename.get(i).getText() +" price :- "+ price.get(i).getText());
+	}
+	
+			System.out.println("total count:---"+count);
+			
+	}
+}

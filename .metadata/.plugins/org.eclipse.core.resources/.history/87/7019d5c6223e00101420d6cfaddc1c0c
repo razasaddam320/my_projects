@@ -1,0 +1,56 @@
+package random_Questions;
+
+import java.time.Duration;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
+public class Amazon_Pagination {
+	WebDriver dr;
+	
+	@BeforeTest
+	public void launch_Browser() {
+		 dr = new ChromeDriver();
+		dr.get("https://www.amazon.in/");
+		//maximize
+		dr.manage().window().maximize();
+		//implicit wait
+		dr.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		
+	}
+	
+	@Test
+	public void search_device()  {
+		dr.findElement(By.id("twotabsearchtextbox")).sendKeys("iphone",Keys.ENTER);
+	List<WebElement> phne =	dr.findElements(By.xpath("//span[@class='a-size-medium a-color-base a-text-normal']"));
+	
+	JavascriptExecutor js =(JavascriptExecutor)dr;
+	js.executeScript("window.scrollBy(0,5800);");
+	
+	List<String> All_iphone_name =new ArrayList();
+	
+	for (WebElement i : phne) {
+		All_iphone_name.add(i.getText());
+		
+		System.out.println(i.getText());
+	}
+	
+	System.out.println("__________________________________________________");
+	
+	//	while(true)
+			
+			
+		
+		
+	}
+	
+
+}

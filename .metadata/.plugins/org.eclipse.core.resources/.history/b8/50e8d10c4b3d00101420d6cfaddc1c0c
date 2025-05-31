@@ -1,0 +1,14 @@
+package pomClass;
+
+import org.openqa.selenium.WebDriver;
+
+public class Pom_Login_page {
+	
+		WebDriver driver;
+		
+		Login_page() {
+			
+			
+		}
+
+}

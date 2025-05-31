@@ -1,0 +1,36 @@
+package testNG;
+
+import org.testng.annotations.Test;
+
+
+public class Priortizing_TestCases {
+	
+		@Test (priority=1)
+		
+		public void  tC1() {
+		System.out.println("TC1"); //3rd
+		
+	}
+		@Test (priority=3)
+		public void tC2 () {
+			System.out.println("TC2");//5th
+		}
+		@Test (priority=2)
+		public void tC3 () {
+			System.out.println("TC3");// 4th
+		}
+		
+		@Test (priority =-1)
+		public void tC4() {
+			System.out.println("Tc4");// exicute 1st because of -1
+		
+		}
+		@Test
+		public void tC5() {
+			System.out.println("TC5"); // exicute 2nd
+		}
+		
+	
+	
+
+}

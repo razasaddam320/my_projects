@@ -1,0 +1,45 @@
+package takescreenshot;
+
+import java.io.File;
+import java.io.IOException;
+import java.time.Duration;
+
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
+
+public class Flipkart_Takescreenshots {
+	
+	@Test
+	public void takescreenshot() throws IOException { 
+		
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://www.flipkart.com/");
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		
+		//take screenshots
+		TakesScreenshot ts = (TakesScreenshot)driver;
+		File src = ts.getScreenshotAs(OutputType.FILE);
+		File trg = new File("./screenshotfolder/fullscreenshot.png");
+		FileUtils.copyFile(src, trg);
+		
+		//take screenshot perticular WeElement	
+		WebElement ss = driver.findElement(By.xpath("//span[contains(text(),'Mobiles')]"));
+		File src1 = ss.getScreenshotAs(OutputType.FILE);
+		File trg1 = new File("./screenshotfolder/webelementshot.png");
+		FileUtils.copyFile(src1, trg1);
+		
+		// take screenshot perticular session
+		WebElement ss3 = driver.findElement(By.xpath("//div[@class=\"_3sdu8W emupdz\"]"));
+		File src2 = ss3.getScreenshotAs(OutputType.FILE);
+		File trg2 = new File("./screenshotfolder/sessionshot.png");
+		FileUtils.copyFile(src2, trg2);
+		
+	}
+
+}

@@ -1,0 +1,39 @@
+package random_Questions;
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.testng.annotations.Test;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class Indigo {
+
+	@Test
+	public void loginIndigo() throws InterruptedException {
+		
+		WebDriverManager.chromedriver().setup();
+		WebDriver driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		driver.get("https://www.goindigo.in/?utm_source=google&utm_medium=cpc&utm_campaign=search_campaign_6exclusivefare&cid=Search|P|6Exclusive&s_kwcid=AL!12293!3!687053985554!b!!g!!indigo&gad_source=1&gclid=Cj0KCQiA5rGuBhCnARIsAN11vgTTmpJLiaDJf4PCBtrl8eFTLEnaKWRD0P790GKvku8nm3B6Q7bheCsaAu5-EALw_wcB");
+		driver.findElement(By.id("salePopupCloseBtn")).click();
+		
+		WebElement book = driver.findElement(By.linkText("Book"));
+		Actions act = new Actions(driver);
+		act.moveToElement(book).perform();
+		driver.findElement(By.linkText("6E Holidays")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//span[text()='From City']")).click();
+		//select city
+		driver.findElement(By.xpath("//li[text()='Chennai']")).click();
+		driver.findElement(By.id("toCity")).click();
+		driver.findElement(By.xpath("//div[text()='Sri Lanka']")).click();
+		driver.findElement(By.xpath("//div[@class='DayPicker-Month']/descendant::div[text()='March 2024']/../../descendant::p[text()='7']")).click();
+	}
+
+}

@@ -1,0 +1,28 @@
+package testNG;
+
+import org.testng.annotations.Test;
+
+
+public class DependsOnMethods {
+	
+	@Test (dependsOnMethods = "wipro")
+	public void tcs() {
+		System.out.println("TCS it company");
+	}
+	@Test  
+	public void wipro() {
+		System.out.println("wipro it company");
+	}
+	@Test 
+	public void tata() {
+		System.out.println("Tata Motors");
+		
+		
+	}
+	@Test (dependsOnMethods = "tata")
+	public void maruti() {
+		System.out.println("Maruti Suzuki");
+		
+	}
+
+}

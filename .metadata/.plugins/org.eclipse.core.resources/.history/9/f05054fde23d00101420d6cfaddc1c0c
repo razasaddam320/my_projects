@@ -1,0 +1,5 @@
+package interface_topic;
+
+public class LooseCoupling {
+
+}

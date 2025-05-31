@@ -1,0 +1,37 @@
+package pomClass;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class Pom_Login_page {
+	
+		//declaration
+	@FindBy (name = "username")
+	private WebElement username;
+	
+	@FindBy (name = "password")
+	private WebElement pwd;
+	
+	@FindBy (xpath = "//button[normalize-space (text()='Login')]")
+	private WebElement loginbtn;
+	
+	//inisilization
+	public void login_OrangeHRM(WebDriver driver ) {
+		
+		PageFactory.initElements(driver, this);
+	}
+	
+	public WebElement getusername() {
+		return username;
+	}
+	
+	public WebElement getpwd() {
+		return pwd;
+	}
+	
+	public WebElement getloginbtn() {
+		return loginbtn;
+	}
+}

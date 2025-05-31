@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="6" passed="6" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2024-09-11T16:23:24 IST" name="Default suite" finished-at="2024-09-11T16:23:24 IST" duration-ms="93">
+    <groups>
+    </groups>
+    <test started-at="2024-09-11T16:23:24 IST" name="Default test" finished-at="2024-09-11T16:23:24 IST" duration-ms="93">
+      <class name="testNG.Invication_Count">
+        <test-method signature="tC1()[pri:0, instance:testNG.Invication_Count@18d87d80]" started-at="2024-09-11T16:23:24 IST" name="tC1" finished-at="2024-09-11T16:23:24 IST" duration-ms="12" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tC1 -->
+        <test-method signature="tC1()[pri:0, instance:testNG.Invication_Count@18d87d80]" started-at="2024-09-11T16:23:24 IST" name="tC1" finished-at="2024-09-11T16:23:24 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tC1 -->
+        <test-method signature="tC1()[pri:0, instance:testNG.Invication_Count@18d87d80]" started-at="2024-09-11T16:23:24 IST" name="tC1" finished-at="2024-09-11T16:23:24 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tC1 -->
+        <test-method signature="tC2()[pri:0, instance:testNG.Invication_Count@18d87d80]" started-at="2024-09-11T16:23:24 IST" name="tC2" finished-at="2024-09-11T16:23:24 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tC2 -->
+        <test-method signature="tC2()[pri:0, instance:testNG.Invication_Count@18d87d80]" started-at="2024-09-11T16:23:24 IST" name="tC2" finished-at="2024-09-11T16:23:24 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tC2 -->
+        <test-method signature="tC3()[pri:0, instance:testNG.Invication_Count@18d87d80]" started-at="2024-09-11T16:23:24 IST" name="tC3" finished-at="2024-09-11T16:23:24 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tC3 -->
+      </class> <!-- testNG.Invication_Count -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

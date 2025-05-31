@@ -1,0 +1,28 @@
+package testNG;
+
+
+import org.testng.annotations.Test;
+
+public class Descriptions_Parameters {
+
+
+	@Test (description = " this is TCS ")
+	public void tcs() {
+		System.out.println("TCS");
+	}
+	@Test  
+	public void wipro() {
+		System.out.println("wipro ");
+	}
+	@Test 
+	public void tata() {
+		System.out.println("Tata Motors");
+		
+	}
+	@Test (description = "This is Suzuki")
+	public void maruti() {
+		System.out.println("Maruti ");
+		
+	}
+
+}

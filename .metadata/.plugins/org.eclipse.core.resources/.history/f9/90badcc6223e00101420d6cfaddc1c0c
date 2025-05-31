@@ -1,0 +1,33 @@
+package testNG;
+
+import org.testng.annotations.Test;
+
+public class Invication_Count {
+	
+	@Test (invocationCount =3)
+	public void tC1() {
+		System.out.println("TC1");
+	}
+
+	@Test (invocationCount =2)
+	public void tC2() {
+		System.out.println("TC2");
+	}
+
+	@Test (invocationCount =1)
+	public void tC3() {
+		System.out.println("TC3");
+	}
+
+	@Test (invocationCount =0)
+	public void tC4() {
+		System.out.println("TC4");
+	}
+
+	@Test (invocationCount =-1)
+	public void tC5() {
+		System.out.println("TC5");
+	}
+
+
+}

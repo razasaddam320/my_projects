@@ -1,0 +1,17 @@
+package programs;
+
+public class Reverse_String {
+
+	public static void main(String[] args) {
+		
+		String s = "selenium ka test";
+		String []str = s.split(" ");
+		
+		for(int i=str.length-1; i>=0; i--)
+		{
+			System.out.println(str[i]+ " ");
+		}
+
+	}
+
+}

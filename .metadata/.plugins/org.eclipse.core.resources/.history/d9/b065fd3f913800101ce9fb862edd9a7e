@@ -1,0 +1,27 @@
+package excelSheet;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+
+import org.apache.poi.EncryptedDocumentException;
+import org.apache.poi.ss.usermodel.DataFormatter;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.usermodel.WorkbookFactory;
+
+public class Handle_Excelsheet {
+
+	public static void main(String[] args) throws EncryptedDocumentException, IOException {
+			
+		FileInputStream fis = new FileInputStream("C:\\Users\\Saddam Hussain\\Desktop\\testdata.xlsx");
+		Workbook book = WorkbookFactory.create(fis);
+		Sheet sh = book.getSheet("Sheet1");
+		
+		String cellvalue= sh.getRow(0).getCell(0).getStringCellValue();
+		System.out.println(cellvalue);
+		book.close();
+		
+		
+		
+	}
+}

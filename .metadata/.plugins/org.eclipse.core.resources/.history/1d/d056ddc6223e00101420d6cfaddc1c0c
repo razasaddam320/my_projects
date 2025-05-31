@@ -1,0 +1,16 @@
+package testNG;
+
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+
+public class Parameters_1st_SpecificValue {
+	
+	@Test
+	@Parameters({"Automobile"})
+	public void car(String name) {
+		System.out.println(name);
+	}
+	
+	
+
+}

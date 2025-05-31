@@ -1,0 +1,17 @@
+package interface_topic;
+
+public class Exicute_LooseCoupling {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		LooseCoupling lc;
+		lc = new LooseCoupling_Car();
+		lc.trip();
+		lc = new Loosecoupling_Bike();
+		lc.trip();
+		
+
+	}
+
+}
